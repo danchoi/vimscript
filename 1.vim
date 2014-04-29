@@ -23,17 +23,16 @@ func! PutSystemResReplaceBuffer()
   put! =msg
 endfunc
 
-func! ThesaurusCompletion()
-  let word = expand("<cword>")
-  let synonyms = split(system("./thes.sh ".word , '\n'))
+" Happy
+func! ThesaurusCompletion(findstart, base)
   if a:findstart
-    return 0
+    return len("Pick a synonym:  ")
   else
     if (a:base == '')
-      return synonyms
+      return g:synonyms
     else
       let res = []
-      for x in synonyms
+      for x in g:synonyms
         if x =~ a:base 
           call add(res, x)
         endif
@@ -42,50 +41,34 @@ func! ThesaurusCompletion()
     endif
   endif
 endfunc
-" setlocal completefunc=ThesaurusCompletion
-
-func! DropDownOne()
-  " leftabove split DropDownOne
-  belowright split DropDownOne
-  let g:SelectionList = split(system("find .", '\n'))
-  " help 'completefunc'; help complete-functions
-  setlocal completefunc=DropDownCompletion
+func! Thesaurus()
+  let word = expand("<cword>")
+  let matches = system("./thes.sh ".word )
+  let g:synonyms = split(matches, '\n')
+  leftabove split Thesaurus
+  setlocal completefunc=ThesaurusCompletion
   setlocal buftype=nofile
   setlocal noswapfile
   setlocal modifiable
   resize 1
-  inoremap <buffer> <cr> <Esc>:call ReadDropDownSelection()<CR>
+  inoremap <buffer> <cr> <Esc>:call SelectSynonym()<CR>
   noremap <buffer> q <Esc>:close<CR>
   inoremap <buffer> <Esc> <Esc>:close<CR>
-  call setline(1, "Your selection?  ")
+  call setline(1, "Pick a synonym:  ")
   normal $
   inoremap <buffer> <Tab> <C-x><C-u>
   call feedkeys("a\<c-x>\<c-u>\<c-p>", 't')
 endfunc
 
-func! ReadDropDownSelection()
-  let g:drop_down_selection = getline('.')
-  let g:selection = join(split(getline('.'), '? *')[1:])
-  close
-  put =g:selection
-endfunc
+nnoremap T :call Thesaurus()<CR>
 
-func! DropDownCompletion(findstart, base)
-  if a:findstart
-    return len("Your selection?  ")
-  else
-    if (a:base == '')
-      return g:SelectionList
-    else
-      let res = []
-      for m in g:SelectionList
-        if m =~ a:base 
-          call add(res, m)
-        endif
-      endfor
-      return res
-    endif
+func! SelectSynonym()
+  let g:drop_down_selection = getline('.')
+  let g:selection = join(split(getline('.'), ': *')[1:])
+  close
+  if g:selection =~ '\w'
+    exec "normal caw".g:selection
+    call feedkeys("a", 't')
   endif
 endfunc
-
 
