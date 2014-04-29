@@ -21,16 +21,14 @@
 
 ### Open a link
   
-* Open href 
-
 ```
-    ./lesson.sh 2_href
+./lesson.sh 2_href
 ```
 
 ### Interacting with external programs
 
 ```
-    ./lesson.sh 3_systemcall
+./lesson.sh 3_systemcall
 ```
 
 ### Window Interaction
