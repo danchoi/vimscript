@@ -9,7 +9,7 @@
 * [ri.vim](http://danielchoi.com/software/ri_vim.html)
 * [poddb](http://danielchoi.com/software/poddb_client.html)
 
-Basics
+### Basics
 
 * Documentation 
 * Functions
@@ -19,8 +19,7 @@ Basics
     ./lesson.sh 1_hello
 ```
 
-
-Buffer Interaction
+### Open a link
   
 * Open href 
 
@@ -28,17 +27,17 @@ Buffer Interaction
     ./lesson.sh 2_href
 ```
 
-* Simple examples
+### Interacting with external programs
 
 ```
-    ./lesson.sh 3_href
+    ./lesson.sh 3_systemcall
 ```
 
-Window Interaction
+### Window Interaction
 
     ./lesson.sh 4_thesaurus
 
-Autocomplete Dropdowns
+### Autocomplete Dropdowns
 
     ./lesson.sh 5_thesaurus
 
