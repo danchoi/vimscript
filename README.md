@@ -15,19 +15,25 @@ Basics
 * Functions
 * Key mappings
 
+```
     ./lesson.sh 1_hello
-    
+```
+
 
 Buffer Interaction
   
 * Open href 
 
+```
     ./lesson.sh 2_href
+```
 
 * Simple examples
 
+```
     ./lesson.sh 3_href
 
+```
 
 Window Interaction
 
