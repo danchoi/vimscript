@@ -1,3 +1,9 @@
 #!/bin/bash
-lesson=${1:-1_hello}
-vim -S $1.vim -O $1.txt $1.vim
+width=`tput cols`
+lesson=${1%.*}
+if (( width > 150 ))
+then
+  vim -S $lesson.vim -O $lesson.txt $lesson.vim
+else
+  vim -S $lesson.vim -o $lesson.txt $lesson.vim
+fi
