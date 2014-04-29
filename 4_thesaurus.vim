@@ -1,27 +1,4 @@
-" window control is the last step
-" key bindings
-" variable scope
 
-func! HelloWorld()
-  echo "hello world"
-endfunc
-
-func! PutHelloWorld()
-  let msg = "hello world"
-  put =msg
-endfunc
-
-func! PutSystemRes()
-  let msg = system("ls -l")
-  " :help :pu
-  put! =msg
-endfunc
-
-func! PutSystemResReplaceBuffer()
-  1,$delete
-  let msg = system("ls -l")
-  put! =msg
-endfunc
 
 func! ThesaurusCompletion(findstart, base)
   if a:findstart
@@ -40,6 +17,7 @@ func! ThesaurusCompletion(findstart, base)
     endif
   endif
 endfunc
+
 func! Thesaurus()
   let word = expand("<cword>")
   let matches = system("./thes.sh ".word )
