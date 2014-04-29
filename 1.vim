@@ -63,12 +63,10 @@ endfunc
 nnoremap T :call Thesaurus()<CR>
 
 func! SelectSynonym()
-  let g:drop_down_selection = getline('.')
   let g:selection = join(split(getline('.'), ': *')[1:])
   close
   if g:selection =~ '\w'
-    exec "normal caw".g:selection
-    call feedkeys("a", 't')
+    exec "normal caw".g:selection.' '
   endif
 endfunc
 
