@@ -16,7 +16,7 @@
 * Key mappings
 
 ```
-    ./lesson.sh 1_hello
+./lesson.sh 1_hello
 ```
 
 ### Open a link
