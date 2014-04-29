@@ -1,4 +1,5 @@
 
+:hi PmenuSel   ctermfg=White   ctermbg=Blue cterm=Bold guifg=White 
 
 func! ThesaurusCompletion(findstart, base)
   if a:findstart
