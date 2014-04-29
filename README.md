@@ -2,7 +2,7 @@
 ## Intro to Vim Scripting 
 
 
-### Some Vimscript apps
+### Some of my Vimscript apps
 
 * [Vmail](http://danielchoi.com/software/vmail.html)
 * [Vitunes](http://danielchoi.com/software/vitunes.html)
