@@ -32,7 +32,6 @@ Buffer Interaction
 
 ```
     ./lesson.sh 3_href
-
 ```
 
 Window Interaction
