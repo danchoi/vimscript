@@ -23,7 +23,6 @@ func! PutSystemResReplaceBuffer()
   put! =msg
 endfunc
 
-" Happy
 func! ThesaurusCompletion(findstart, base)
   if a:findstart
     return len("Pick a synonym:  ")
@@ -66,7 +65,7 @@ func! SelectSynonym()
   let g:selection = join(split(getline('.'), ': *')[1:])
   close
   if g:selection =~ '\w'
-    exec "normal caw".g:selection.' '
+    exec "normal ciw".g:selection
   endif
 endfunc
 
