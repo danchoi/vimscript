@@ -1,0 +1,10 @@
+In normal mode:
+
+:call HelloWorld()<CR>      " <CR> means press ENTER
+
+Key mapping: <leader>h
+
+To show <leader>, :echo mapleader
+
+
+
