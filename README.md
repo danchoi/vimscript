@@ -1,7 +1,7 @@
 
 ## Intro to Vim Scripting 
 
-Twitter: @danchoi
+Twitter: [@danchoi](https://twitter.com/danchoi)
 
 ### Some of my Vimscript apps
 
