@@ -1,6 +1,7 @@
 
 ## Intro to Vim Scripting 
 
+Twitter: @danchoi
 
 ### Some of my Vimscript apps
 
